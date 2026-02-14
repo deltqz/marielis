@@ -1,0 +1,38 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const latest = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Daily Orbit News</h1>
+			<p>Independent reporting on the stories shaping cities, climate, and technology.</p>
+			<p>Fresh articles are published on a simple Astro stack with content-driven pages.</p>
+			<h2>Latest Headlines</h2>
+			<ul>
+				{
+					latest.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+			<p><a href="/blog">Read all news posts</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>

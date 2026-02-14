@@ -1,0 +1,26 @@
+---
+import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="About Daily Orbit"
+	description="How this independent newsroom works"
+	pubDate={new Date('February 13 2026')}
+	heroImage={AboutHeroImage}
+>
+	<p>
+		Daily Orbit News is a small digital newsroom built to publish clear, practical reporting about
+		technology, climate, and local life.
+	</p>
+
+	<p>
+		This site runs on Astro and Markdown content collections, so publishing a new article is as simple
+		as adding a new file in the content folder.
+	</p>
+
+	<p>
+		Coverage is intentionally lightweight and readable, with straightforward article pages and a
+		chronological news feed.
+	</p>
+</Layout>
