@@ -1,10 +1,31 @@
-# Astro Starter Kit: Blog
+# Daily Orbit News
 
 ```sh
 npm create astro@latest -- --template blog
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Astro news blog configured for GitHub Pages.
+
+## GitHub Pages deployment
+
+This repository is configured to deploy automatically to GitHub Pages using [deploy workflow](.github/workflows/deploy.yml).
+
+1. In GitHub, open repository settings.
+2. Go to **Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Push to `main`.
+
+The site publishes at:
+
+- `https://deltqz.github.io/marielis/`
+
+Local commands:
+
+- `npm run dev`
+- `npm run build`
+- `npm run preview`
+
+---
 
 Features:
 
